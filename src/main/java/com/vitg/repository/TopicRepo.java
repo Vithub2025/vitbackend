@@ -8,7 +8,5 @@ import com.vitg.entity.Topic;
 
 @Repository
 public interface TopicRepo extends JpaRepository<Topic ,Integer> {
-	
 	Topic findById(int id);
-
 }

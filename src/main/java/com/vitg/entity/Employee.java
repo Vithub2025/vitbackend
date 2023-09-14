@@ -21,10 +21,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name="employee")
-
 public class Employee implements Serializable{
 	
 	public static final long serialVersionUID = -5583968848579257151L;
+	
 	@Id	
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
@@ -47,17 +47,17 @@ public class Employee implements Serializable{
 	private String gender;
 	
 	@Column( name = "profile_pic" , length = 1000)
-	private byte[]profilePic;
+	private byte[] profilePic;
 	
 	@Column( name = "aadhaar_pic" , length = Integer. MAX_VALUE , nullable =true)
 	private byte[] aadhaarPic;
 	
 	@Column (name = "pan_card_pic" ,length = 1000)
-	private byte[]pancardPic;
+	private byte[] pancardPic;
    
-	@OneToOne (cascade = { CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER, targetEntity = EmployeeRole.class) 
+	@OneToOne (cascade = { CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER, targetEntity = Role.class) 
 	@JoinColumn ( name = "role_id" , referencedColumnName = "id")
-	private EmployeeRole role;
+	private Role role;
 	
 	@OneToOne (cascade = { CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER, targetEntity = EmployeeAddress.class) 
 	@JoinColumn ( name = "address_id" , referencedColumnName = "id")

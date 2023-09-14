@@ -1,6 +1,7 @@
 package com.vitg.entity;
 
-import jakarta.persistence.Column;
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,23 +16,16 @@ import lombok.NoArgsConstructor;
 @Table(name="student")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
-	
-	private static long serialVersionUID = -5583968848579257151L;
+public class Student implements Serializable{
+
+	private static final long serialVersionUID = 4130758031076098234L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
-	//@Column ( name = "id")
 	private int id;
-	
-	//@Column ( name = "name")
 	private String name;
-	
-	//@Column ( name = "mobile_number" ,unique =true)
 	private String mobileNumber;
-	
-	//@Column ( name = "email" )
 	private String email;
 	private String gender;
 

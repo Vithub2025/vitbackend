@@ -3,8 +3,8 @@ package com.vitg.dto;
 import lombok.Data;
 
 @Data
-public class EmployeeRoleDTO {
+public class RoleDTO {
 	
 	private int id;
-	private String role_name;
+	private String roleName;
 }

@@ -22,6 +22,7 @@ public class StudentServiceImpl  implements StudentService {
 
 	@Autowired
 	private ModelMapper modelMapper;
+	
 	@Override
 	public StudentDTO getStudentById(int id) {
 		Student student = studentRepository.findById(id);
@@ -51,6 +52,4 @@ public class StudentServiceImpl  implements StudentService {
 		StudentDTO  studentDTOResponce = modelMapper.map(studentResponce, StudentDTO.class);
 		return studentDTOResponce;
 	}
-
-
 }

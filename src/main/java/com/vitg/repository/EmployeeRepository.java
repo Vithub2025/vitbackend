@@ -8,10 +8,5 @@ import com.vitg.entity.Employee;
 @Repository
 
 public interface EmployeeRepository extends JpaRepository< Employee ,Integer> {
-	
 	Employee findById( int id);
-	
-	
-	
-
 }

@@ -29,17 +29,11 @@ public class StudentController {
 	@GetMapping("/getAllStudents")
 	public List<StudentDTO> getAllStudents(){
 		return studentService.getAllStudents();
-
 	}
 	
  	@PostMapping("/addStudent")
 	public StudentDTO addstudent(@RequestBody StudentDTO studentDTO) {
  		System.out.println("37"+studentDTO);
 		return studentService.addStudent(studentDTO);
-
 	}
- 	
-
-
-
 }

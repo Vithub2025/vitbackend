@@ -23,16 +23,16 @@ public class BatchController {
 	
 	@GetMapping("/{id}")
 	public BatchDTO getBatchesById(@PathVariable int id) {
-		BatchDTO Batch =batchService.getBatchById(id);
+		BatchDTO Batch = batchService.getBatchById(id);
 		return Batch;
 }
-	@GetMapping("/getAllBatches")
+	@GetMapping("/all")
 	public List<BatchDTO> getAllBatches(){
 		return batchService.getAllBatches();
 }
-	@PostMapping("/addBatches")
-	public BatchDTO addBatches(@RequestBody BatchDTO BatchDTO) {
-		BatchDTO BatchDTOResponse =batchService.addBatch(BatchDTO);
+	@PostMapping("/addBatch")
+	public BatchDTO addBatch(@RequestBody BatchDTO BatchDTO) {
+		BatchDTO BatchDTOResponse = batchService.addBatch(BatchDTO);
 		return BatchDTOResponse;
 	}
 	}

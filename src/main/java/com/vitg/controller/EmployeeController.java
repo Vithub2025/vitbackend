@@ -17,25 +17,23 @@ import com.vitg.service.EmployeeService;
 @RequestMapping("employee")
 
 public class EmployeeController  {
+	
 	@Autowired
 	private EmployeeService employeeService;
 	
-	
 	@GetMapping("/{id}")
-	public EmployeeDTO getEmployeeById(@PathVariable("id")int id) {
-		EmployeeDTO employee =employeeService.getEmployeeById(id);
+	public EmployeeDTO getEmployeeById(@PathVariable ("id") int id) {
+		EmployeeDTO employee = employeeService.getEmployeeById(id);
 		return employee;
-		
 	}
-	@GetMapping("/getAllEmployees")
+	
+	@GetMapping("/all")
 	public List<EmployeeDTO> getAllEmployees() {
 	return employeeService.getAllEmployees();
-		
 	}
 	
 	@PostMapping("/addEmployee")
-	public EmployeeDTO addEmployee( @RequestBody EmployeeDTO employeeDTO) {
+	public EmployeeDTO addEmployee(@RequestBody EmployeeDTO employeeDTO) {
 		return employeeService.addEmployee(employeeDTO);
-		
 	}
 }

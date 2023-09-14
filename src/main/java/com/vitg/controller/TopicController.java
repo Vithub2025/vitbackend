@@ -37,5 +37,4 @@ public class TopicController {
 		TopicDTO topicDTOResponse = TopicService.addTopic(topicDTO);
 		return topicDTOResponse;
 	}
-	
 }

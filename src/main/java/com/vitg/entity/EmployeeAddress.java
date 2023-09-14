@@ -1,6 +1,6 @@
 package com.vitg.entity;
 
-
+import java.io.Serializable;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +14,9 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="employee_address")
-public class EmployeeAddress {
+public class EmployeeAddress implements Serializable{
+
+	private static final long serialVersionUID = 4130758031076098234L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -22,9 +24,7 @@ public class EmployeeAddress {
 	private int id;
 	private String addressLine;
 	private String country;
-	private String zipcode;
+	private String zipCode;
 	private String state;
 	private String city;
-
-
 }

@@ -1,5 +1,7 @@
 package com.vitg.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,15 +16,16 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table (name = "role")
-public class EmployeeRole {
-	private static final long serialVersionUID = 6373101192042570534L; 
+public class Role implements Serializable {
+
+	private static final long serialVersionUID = 6373101192042570534L;
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	
-	@Column ( name = "ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ID")
 	private int id;
-	
-	@Column ( name = "role_name" ,unique = true)
-	private String rolename;
+
+	@Column(name="role_name",unique=true)
+	private String roleName;
 	
 }

@@ -7,10 +7,6 @@ import com.vitg.entity.EmployeeAddress;
 
 
 @Repository
-public interface AddressTableRepository  extends JpaRepository< EmployeeAddress , Integer>{
-	
+public interface AddressTableRepository  extends JpaRepository<EmployeeAddress , Integer>{
 	 EmployeeAddress findById(int id);
-	
-	
-
 }

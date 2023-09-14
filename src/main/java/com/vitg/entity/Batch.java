@@ -12,20 +12,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-//@Entity
+@Entity
 @Table(name="batch")
 public class Batch {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-  //private static final long serialVersionUID = 4130758031076098234L;
  
 	@Column ( name = "id")
 	private int id;
 	
-	@Column ( name = "batch_Code")
+	@Column ( name = "batch_code")
 	private String batchCode;
 	
-	@Column ( name = "batch_Name")
+	@Column ( name = "batch_name")
 	private String batchName;
 	
 	@Column ( name = "trainer")
@@ -57,9 +56,5 @@ public class Batch {
 	
 	@Column ( name = " demo_link")
 	private String demoLink;
-	
-	
-	
-
 
 }

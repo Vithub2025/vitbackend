@@ -1,6 +1,7 @@
 package com.vitg.dto;
 
 import com.vitg.entity.EmployeeAddress;
+import com.vitg.entity.Role;
 
 import lombok.Data;
 
@@ -13,11 +14,11 @@ public class EmployeeDTO {
 	private String email;
 	private String aadhaar;
 	private String gender;
-	private byte[]profilePic;
-	private byte[] aadhaaePic;
-	private byte[]pancardPic;
+	private byte[] profilePic;
+	private byte[] aadhaarPic;
+	private byte[] pancardPic;
 	private EmployeeAddress address;
-	private String roleId;
+	private Role roleId;
 	
 	
 	

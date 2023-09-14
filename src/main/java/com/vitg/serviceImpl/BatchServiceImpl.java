@@ -2,7 +2,6 @@ package com.vitg.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +14,15 @@ import com.vitg.service.BatchService;
 
 @Service
 public class BatchServiceImpl implements  BatchService {
-   @Autowired
+	@Autowired
 	private BatchRepo batchRepo;
-   
-   @Autowired
-   private ModelMapper modelMapper;
-   
+
+	@Autowired
+	private ModelMapper modelMapper;
+
 	@Override
 	public BatchDTO getBatchById(int id) {
-		Optional<Batch> batch=batchRepo.findById(id);
+		Batch batch=batchRepo.findById(id);
 		BatchDTO batchDTO =modelMapper.map(batch, BatchDTO.class);
 		return batchDTO;
 	}
@@ -44,15 +43,7 @@ public class BatchServiceImpl implements  BatchService {
 		Batch batch=modelMapper.map( batchDTO,Batch.class );
 		Batch batchResponce=batchRepo.save(batch);
 		BatchDTO batchDTOResponce=modelMapper.map(batchResponce, BatchDTO.class);
-	
 		return batchDTOResponce;
 	}
 
-	
-	}
-
-	
-
-	
-
-
+}

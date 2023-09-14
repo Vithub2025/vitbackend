@@ -2,13 +2,10 @@ package com.vitg.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.vitg.dto.BatchDTO;
 import com.vitg.dto.CourseDTO;
 import com.vitg.entity.Course;
 import com.vitg.repository.CourseRepo;
@@ -24,7 +21,7 @@ public class CourseServiceImpl implements CourseService{
 	private ModelMapper modelMapper;
 	@Override
 	public CourseDTO getCourseById(int id) {
-	Optional<Course> course=courseRepo.findById(id);
+	Course course = courseRepo.findById(id);
 	CourseDTO courseDTO=modelMapper.map(course,CourseDTO.class);
 		return courseDTO ;
 	}
