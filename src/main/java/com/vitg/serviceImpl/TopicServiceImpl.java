@@ -24,7 +24,7 @@ public class TopicServiceImpl implements TopicService {
 	@Override
 	public TopicDTO getTopicById(int id) {
 		 Topic topic= topicRepo.findById(id);
-		TopicDTO topicDTO =modelMapper.map(topic, TopicDTO.class );
+		TopicDTO topicDTO = modelMapper.map(topic, TopicDTO.class );
 		return topicDTO;
 	}
 
@@ -33,7 +33,7 @@ public class TopicServiceImpl implements TopicService {
 	List<Topic> topicList =topicRepo.findAll();
 	List<TopicDTO>topicListDTO= new ArrayList<>();
 	for (Topic topic:topicList) {
-		TopicDTO topicDTO=modelMapper.map(topic,TopicDTO.class);
+		TopicDTO topicDTO= modelMapper.map(topic,TopicDTO.class);
 			topicListDTO.add(topicDTO);
 	}
 		return topicListDTO;
@@ -41,9 +41,9 @@ public class TopicServiceImpl implements TopicService {
 
 	@Override
 	public TopicDTO addTopic(TopicDTO topicDTO) {
-		Topic topic =modelMapper.map(topicDTO, Topic.class);
+		Topic topic = modelMapper.map(topicDTO, Topic.class);
 		Topic topicResponce=topicRepo.save(topic);
-		TopicDTO topicDTOResponce=modelMapper.map(topicResponce, TopicDTO.class);
+		TopicDTO topicDTOResponce= modelMapper.map(topicResponce, TopicDTO.class);
 		return topicDTOResponce;
 	}
 
