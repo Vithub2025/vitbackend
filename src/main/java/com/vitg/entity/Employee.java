@@ -55,17 +55,12 @@ public class Employee implements Serializable{
 	@Column (name = "pan_card_pic" ,length = 1000)
 	private byte[] pancardPic;
    
-	@OneToOne (cascade = { CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER, targetEntity = Role.class) 
-	@JoinColumn ( name = "role_id" , referencedColumnName = "id")
+	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER, targetEntity = Role.class)
+	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	private Role role;
 	
 	@OneToOne (cascade = { CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER, targetEntity = EmployeeAddress.class) 
 	@JoinColumn ( name = "address_id" , referencedColumnName = "id")
-	private EmployeeAddress addressTable;
-	
-	
-	
-	
-	
+	private EmployeeAddress address;
 
 }

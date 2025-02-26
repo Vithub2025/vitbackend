@@ -6,8 +6,7 @@ import lombok.Data;
 public class SubCourseDTO {
 
 	private int id;
-	private String course;
-	private String subCourse;
+	private String name;
 	private int durationDays;
 	private int durationHours;
 	private int fee;
@@ -16,4 +15,5 @@ public class SubCourseDTO {
 	private String examCertification;
 	private String overview;
 	private String status;
+	private CourseDTO course;
 }

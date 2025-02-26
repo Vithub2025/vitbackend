@@ -7,7 +7,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,11 +30,8 @@ public class SubCourse implements Serializable {
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "course")
-	private String course;
-	
-	@Column(name = "sub_course")
-	private String subCourse;
+	@Column(name = "name")
+	private String name;
 	
 	@Column(name = "duration_days")
 	private int durationDays;
@@ -59,8 +58,8 @@ public class SubCourse implements Serializable {
 	@Column(name = "status")
 	private String status;
 	
-	//@ManyToOne(targetEntity = Course.class)
-	//@JoinColumn(name = "course_id", referencedColumnName = "id")
-	//private Course courseData;
+	@ManyToOne(targetEntity = Course.class)
+	@JoinColumn(name = "course_id", referencedColumnName = "id")
+	private Course course;
 
 }

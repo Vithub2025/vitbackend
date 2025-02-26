@@ -16,21 +16,21 @@ import com.vitg.service.TopicService;
 public class TopicServiceImpl implements TopicService {
    
 	@Autowired
-	private TopicRepo topicRepo;
+	private TopicRepo topicRepository;
 	
 	@Autowired
 	private ModelMapper modelMapper;
 	
 	@Override
 	public TopicDTO getTopicById(int id) {
-		 Topic topic= topicRepo.findById(id);
+		 Topic topic= topicRepository.findById(id);
 		TopicDTO topicDTO = modelMapper.map(topic, TopicDTO.class );
 		return topicDTO;
 	}
 
 	@Override
 	public List<TopicDTO> getAllTopics() {
-	List<Topic> topicList =topicRepo.findAll();
+	List<Topic> topicList = topicRepository.findAll();
 	List<TopicDTO>topicListDTO= new ArrayList<>();
 	for (Topic topic:topicList) {
 		TopicDTO topicDTO= modelMapper.map(topic,TopicDTO.class);
@@ -42,9 +42,23 @@ public class TopicServiceImpl implements TopicService {
 	@Override
 	public TopicDTO addTopic(TopicDTO topicDTO) {
 		Topic topic = modelMapper.map(topicDTO, Topic.class);
-		Topic topicResponce=topicRepo.save(topic);
+		Topic topicResponce = topicRepository.save(topic);
 		TopicDTO topicDTOResponce= modelMapper.map(topicResponce, TopicDTO.class);
 		return topicDTOResponce;
+	}
+
+	@Override
+	public List<TopicDTO> getTopicListBySubCourseId(int subCourseId) {
+		List<Topic> topicList = topicRepository.findAll();
+		List<TopicDTO> topicDTOList = new ArrayList<>();
+
+		for(Topic topic: topicList) {
+			if(topic.getSubCourse().getId() == subCourseId) {
+				TopicDTO topicDTO = modelMapper.map(topic, TopicDTO.class);
+				topicDTOList.add(topicDTO);
+			}
+		}
+		return topicDTOList;
 	}
 
 }

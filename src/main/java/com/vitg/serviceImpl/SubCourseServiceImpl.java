@@ -46,4 +46,18 @@ public class SubCourseServiceImpl implements SubCourseService {
 		}
 		return subCourseDTOList;
 	}
+
+	@Override
+	public List<SubCourseDTO> getSubCourseListByCourseId(int courseId) {
+		List<SubCourse> subCourseList = subCourseRepo.findAll();
+		List<SubCourseDTO> subCourseDTOList = new ArrayList<>();
+
+		for (SubCourse subCourse: subCourseList) {
+			if (subCourse.getCourse().getId() == courseId) {
+				SubCourseDTO subcourseDTO = modelMapper.map(subCourse, SubCourseDTO.class);
+				subCourseDTOList.add(subcourseDTO);
+			}
+		}
+		return subCourseDTOList;
+	}
 }

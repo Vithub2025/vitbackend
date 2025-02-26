@@ -34,7 +34,7 @@ public class StudentServiceImpl  implements StudentService {
 	@Override
 	public List<StudentDTO> getAllStudents() {
 		List<Student> studentList=studentRepository.findAll();
-
+		System.out.println(studentList);
 		List<StudentDTO>studentListDTO=new ArrayList<>();
 		for (Student student :studentList ) {
 
@@ -46,7 +46,6 @@ public class StudentServiceImpl  implements StudentService {
 
 	@Override
 	public StudentDTO addStudent(StudentDTO studentDTO) {
-		System.out.println("48"+studentDTO);
 		Student student = modelMapper.map(studentDTO,Student.class);
 		Student studentResponce = studentRepository.save(student);
 		StudentDTO  studentDTOResponce = modelMapper.map(studentResponce, StudentDTO.class);

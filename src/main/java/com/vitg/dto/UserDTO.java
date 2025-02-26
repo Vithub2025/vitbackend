@@ -7,4 +7,5 @@ public class UserDTO {
 	private int id;
 	private String token;
 	private String phoneNumber;
+	EmployeeDTO employeeDTO;
 }

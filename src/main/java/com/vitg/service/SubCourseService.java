@@ -9,5 +9,5 @@ public interface SubCourseService {
 	public SubCourseDTO addSubCourse(SubCourseDTO subCourseDTO);
 	public SubCourseDTO getSubCourseById(int id);
 	public List<SubCourseDTO> getAllSubCourses();
-
+	public List<SubCourseDTO> getSubCourseListByCourseId(int courseId);
 }

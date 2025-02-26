@@ -13,12 +13,9 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="course")
-public class Course implements Serializable{
+@Table(name="student_material")
+public class StudentMaterial implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -28,14 +25,9 @@ public class Course implements Serializable{
 	
 	@Column(name = "name", length = 1000)
 	private String name;
-
-	@Column(name = "image", length = 1000)
+	
+	@Column(name = "student_material", length = 1000)
 	@Lob
-	private byte[] image;
+	private byte[] studentMaterial;
 	
-	@Column(name = "description", length = 1000)
-	private String description;
-	
-	@Column(name = "status", length = 1000)
-	private String status;
 }

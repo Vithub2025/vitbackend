@@ -1,0 +1,8 @@
+INSERT INTO `vitg`.`role` (`id`, `role_name`) VALUES ('1', 'ADMIN');
+INSERT INTO `vitg`.`role` (`id`, `role_name`) VALUES ('2', 'MANAGER');
+INSERT INTO `vitg`.`role` (`id`, `role_name`) VALUES ('3', 'ACCOUNTANT');
+INSERT INTO `vitg`.`role` (`id`, `role_name`) VALUES ('4', 'ORGANIZER');
+INSERT INTO `vitg`.`role` (`id`, `role_name`) VALUES ('5', 'TRAINER');
+INSERT INTO `vitg`.`role` (`id`, `role_name`) VALUES ('6', 'STUDENT');
+INSERT INTO `vitg`.`role` (`id`, `role_name`) VALUES ('7', 'SUPPORT_ENGINEER');
+INSERT INTO `vitg`.`role` (`id`, `role_name`) VALUES ('8', 'GUEST');

@@ -3,6 +3,7 @@ package com.vitg.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,8 +15,8 @@ import com.vitg.dto.EmployeeDTO;
 import com.vitg.service.EmployeeService;
 
 @RestController
-@RequestMapping("employee")
-
+@RequestMapping("/employee")
+@CrossOrigin
 public class EmployeeController  {
 	
 	@Autowired
@@ -32,6 +33,7 @@ public class EmployeeController  {
 	return employeeService.getAllEmployees();
 	}
 	
+	@CrossOrigin
 	@PostMapping("/addEmployee")
 	public EmployeeDTO addEmployee(@RequestBody EmployeeDTO employeeDTO) {
 		return employeeService.addEmployee(employeeDTO);
