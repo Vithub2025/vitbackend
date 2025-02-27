@@ -15,7 +15,7 @@ COPY target/vitg-api-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the application port (default for Spring Boot)
 
-EXPOSE 8080
+EXPOSE 8082
 
 
 # Run the application
